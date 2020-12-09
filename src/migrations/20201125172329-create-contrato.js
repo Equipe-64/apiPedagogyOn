@@ -30,28 +30,25 @@ module.exports = {
         field:"cod_cliente",
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
-          model: "Clientes",
-          key: "id"
-        }
+        references:{ model: "Clientes", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       cod_dependente: {
         field:"cod_dependente",
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
-          model: "Dependentes",
-          key: "id"
-        }
+        references:{ model: "Dependentes", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       cod_profissional: {
         field:"cod_profissional",
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
-          model: "Profissionals",
-          key: "id"
-        }
+        references:{ model: "Profissionals", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       createdAt: {
         allowNull: false,

@@ -36,10 +36,9 @@ module.exports = {
         field:"cod_cliente",
         type: Sequelize.INTEGER,
         allowNull: false,
-        references:{
-          model: "Clientes",
-          key: "id"
-        }
+        references:{ model: "Clientes", key: "id" },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       createdAt: {
         allowNull: false,

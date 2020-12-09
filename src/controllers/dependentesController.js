@@ -1,4 +1,5 @@
 const Dependente = require('../models').Dependente
+const Cliente = require('../models').Cliente
 
 exports.listAll = (req, res) => {
   Dependente.findAll().then(dependentes => {res.send(dependentes)})
@@ -6,7 +7,7 @@ exports.listAll = (req, res) => {
 }
 
 exports.listOne = (req, res) => {
-  Dependente.findAll({where: { id:req.params.id}})
+  Dependente.findAll({where: { id:req.params.id}, include: { model: Cliente }})
     .then(dependente => { res.send(dependente) })
     .catch(error => { res.send(error) }) 
 }
